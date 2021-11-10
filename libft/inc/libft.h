@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 09:42:29 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/04 09:00:55 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/10 10:06:35 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ typedef struct s_list
 //	No external functions
 
 int		ft_isalpha(int c);
-int		ft_isdigit(int c);
+int		ft_isdigit(const int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
@@ -130,5 +130,6 @@ int		ft_lastchr(const char *str);
 size_t	ft_word_counter(const char *str);
 void	ft_clear_split(char **ptr);
 char	*get_next_line(int fd);
+long	ft_atol(const char *str);
 
 #endif
