@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/11/06 18:20:27 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/11/11 17:29:34 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,10 @@ NAME			=	push_swap
 BONUS_NAME		=	
 
 AUX_DIR			=	aux
-AUX_FILES		=	check_start_arguments.c
+AUX_FILES		=	check_start_arguments.c \
+					stack_create.c \
+					stack_destroy.c \
+					add_node_to_stack.c
 AUX_PATH		=	$(addprefix $(AUX_DIR)/, $(AUX_FILES))
 
 SRC_DIR			=	./src
