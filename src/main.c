@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:34:53 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/11 20:08:19 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/11 20:53:58 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,39 @@ int	main(int argc, char *argv[])
 	{
 		while (--index)
 			add_node_to_stack(stack, ft_atoi(argv[index]));
+		printf("stack name:	%c\n", stack->name);
+		printf("stack top:	%d\n", stack->top->content);
+		printf("stack begin:	%d\n", stack->begin->content);
+		printf("stack size:	%d\n\n", stack->size);
+		aux = stack->top;
+		while (aux)
+		{
+			printf("%d\n", aux->content);
+			aux = aux->prev;
+		}
+		stack_swap(stack);
+		printf("stack name:	%c\n", stack->name);
+		printf("stack top:	%d\n", stack->top->content);
+		printf("stack begin:	%d\n", stack->begin->content);
+		printf("stack size:	%d\n\n", stack->size);
+		aux = stack->top;
+		while (aux)
+		{
+			printf("%d\n", aux->content);
+			aux = aux->prev;
+		}
+		stack_rotate(stack);
+		printf("stack name:	%c\n", stack->name);
+		printf("stack top:	%d\n", stack->top->content);
+		printf("stack begin:	%d\n", stack->begin->content);
+		printf("stack size:	%d\n\n", stack->size);
+		aux = stack->top;
+		while (aux)
+		{
+			printf("%d\n", aux->content);
+			aux = aux->prev;
+		}
+		stack_reverse_rotate(stack);
 		printf("stack name:	%c\n", stack->name);
 		printf("stack top:	%d\n", stack->top->content);
 		printf("stack begin:	%d\n", stack->begin->content);
