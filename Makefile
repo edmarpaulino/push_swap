@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/11/11 20:53:36 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/11/13 19:01:24 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,9 @@ AUX_FILES		=	check_start_arguments.c \
 					add_node_to_stack.c \
 					stack_swap.c \
 					stack_rotate.c \
-					stack_reverse_rotate.c
+					stack_reverse_rotate.c \
+					stack_push.c \
+					del_node_of_stack.c
 AUX_PATH		=	$(addprefix $(AUX_DIR)/, $(AUX_FILES))
 
 SRC_DIR			=	./src
