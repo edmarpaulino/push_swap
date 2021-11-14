@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 12:08:21 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/13 19:02:02 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/14 15:39:09 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	stack_push(t_stack *stack_src_ref, t_stack *stack_dst_ref)
 	{
 		add_node_to_stack(stack_dst, stack_src->top->content);
 		del_node_of_stack(stack_src);
-
 	}
 	if (stack_src->name == 'a')
 		ft_putendl_fd("pb", 1);

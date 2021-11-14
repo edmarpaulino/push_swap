@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/11/13 19:01:24 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/11/14 17:52:56 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,10 @@ AUX_PATH		=	$(addprefix $(AUX_DIR)/, $(AUX_FILES))
 
 SRC_DIR			=	./src
 SRC_FILES		=	main.c \
+					init.c \
+					stack_is_sorted.c \
+					stack_sort.c \
+					find_smaller.c \
 					$(AUX_PATH)
 
 BONUS_DIR		=	

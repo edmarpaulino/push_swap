@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/13 19:01:01 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/14 17:47:45 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,14 +33,18 @@ typedef struct s_stack
 	int				size;
 }				t_stack;
 
-void			check_start_arguments(const int argc, const char **argv);
-t_stack			*stack_create(char name);
-void			stack_destroy(t_stack *stack_ref);
-void			add_node_to_stack(t_stack *stack_ref, int content);
-void			del_node_of_stack(t_stack *stack_ref);
-void			stack_swap(t_stack *stack_ref);
-void			stack_rotate(t_stack *stack_ref);
-void			stack_reverse_rotate(t_stack *stack_ref);
-void			stack_push(t_stack *stack_src_ref, t_stack *stack_dst_ref);
+void	check_start_arguments(const int argc, const char **argv);
+t_stack	*stack_create(char name);
+void	stack_destroy(t_stack *stack_ref);
+void	add_node_to_stack(t_stack *stack_ref, int content);
+void	del_node_of_stack(t_stack *stack_ref);
+void	stack_swap(t_stack *stack_ref);
+void	stack_rotate(t_stack *stack_ref);
+void	stack_reverse_rotate(t_stack *stack_ref);
+void	stack_push(t_stack *stack_src_ref, t_stack *stack_dst_ref);
+void	init(t_stack *stack_ref, int argc, char **argv);
+int		stack_is_sorted(t_stack *stack_ref);
+void	stack_sort(t_stack *stack_a_ref, t_stack *stack_b_ref);
+int		find_smaller(t_stack *stack_ref);
 
 #endif

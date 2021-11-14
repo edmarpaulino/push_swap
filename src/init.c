@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   del_node_of_stack.c                                :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 18:56:23 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/14 15:38:55 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/11/14 16:13:23 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/11/14 16:48:07 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	del_node_of_stack(t_stack *stack_ref)
+void	init(t_stack *stack_ref, int argc, char **argv)
 {
-	t_stack			*stack;
-	t_stack_node	*node;
+	int		index;
+	t_stack	*stack;
 
 	stack = stack_ref;
-	if (stack->size == 1)
+	if (stack)
 	{
-		node = stack->top;
-		free(node);
-		stack->top = NULL;
-		stack->begin = NULL;
-		stack->size--;
-	}
-	else if (stack->size > 1)
-	{
-		node = stack->top;
-		stack->top = stack->top->prev;
-		stack->top->next = NULL;
-		free(node);
-		stack->size--;
+		index = argc;
+		while (--index > 0)
+			add_node_to_stack(stack, ft_atoi(argv[index]));
 	}
 }

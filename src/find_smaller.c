@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   del_node_of_stack.c                                :+:      :+:    :+:   */
+/*   find_smaller.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/13 18:56:23 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/14 15:38:55 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/11/14 17:41:18 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/11/14 17:51:38 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	del_node_of_stack(t_stack *stack_ref)
+int	find_smaller(t_stack *stack_ref)
 {
 	t_stack			*stack;
-	t_stack_node	*node;
+	t_stack_node	*aux;
+	int				smaller;
 
 	stack = stack_ref;
-	if (stack->size == 1)
+	smaller = stack->begin->content;
+	aux = stack->begin;
+	while (aux)
 	{
-		node = stack->top;
-		free(node);
-		stack->top = NULL;
-		stack->begin = NULL;
-		stack->size--;
+		if (aux->content < smaller)
+			smaller = aux->content;
+		aux = aux->next;
 	}
-	else if (stack->size > 1)
-	{
-		node = stack->top;
-		stack->top = stack->top->prev;
-		stack->top->next = NULL;
-		free(node);
-		stack->size--;
-	}
+	return (smaller);
 }
