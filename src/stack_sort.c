@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 14:39:22 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/20 15:11:22 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/20 15:20:15 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,12 +44,12 @@ static void	put_bigger_on_top(t_stack *stack_ref)
 	direction = get_direction(stack, bigger);
 	if (direction == 1)
 	{
-		while (stack->top != bigger)
+		while (stack->top->content != bigger)
 			stack_rotate(stack);
 	}
 	else
 	{
-		while (stack->top != bigger)
+		while (stack->top->content != bigger)
 			stack_reverse_rotate(stack);
 	}
 }
@@ -79,7 +79,7 @@ void	stack_sort(t_stack *stack_a_ref, t_stack *stack_b_ref)
 	bigger = find_bigger(stack_a);
 	while (stack_a->size > 1)
 	{
-		if (stack_a->top == bigger)
+		if (stack_a->top->content == bigger)
 			stack_rotate(stack_a);
 		else
 			stack_push(stack_a, stack_b);
