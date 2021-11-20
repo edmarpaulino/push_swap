@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/20 15:11:43 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/20 16:19:30 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,5 +46,6 @@ void	init(t_stack *stack_ref, int argc, char **argv);
 int		stack_is_sorted(t_stack *stack_ref);
 void	stack_sort(t_stack *stack_a_ref, t_stack *stack_b_ref);
 int		find_bigger(t_stack *stack_ref);
+int		find_smaller(t_stack *stack_ref);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/11/20 14:49:09 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/11/20 16:19:42 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRC_FILES		=	main.c \
 					stack_is_sorted.c \
 					stack_sort.c \
 					find_bigger.c \
+					find_smaller.c \
 					$(AUX_PATH)
 
 BONUS_DIR		=	
