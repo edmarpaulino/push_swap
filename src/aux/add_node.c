@@ -1,29 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   add_node.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 17:34:53 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/20 15:11:41 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/11/11 16:39:17 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/11/20 15:17:22 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+t_stack_node	*add_node(t_stack *stack_ref, int content)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_stack			*stack;
+	t_stack_node	*node;
 
-	check_start_arguments(argc, (const char **)argv);
-	stack_a = stack_create('a');
-	stack_b = stack_create('b');
-	init(stack_a, argc, argv);
-	if (!stack_is_sorted(stack_a))
-		stack_sort(stack_a, stack_b);
-	stack_destroy(stack_a);
-	stack_destroy(stack_b);
-	return (0);
+	stack = stack_ref;
+	node = (t_stack_node *)malloc(sizeof(t_stack_node *));
+	if (node)
+	{
+		node->next = NULL;
+		node->prev = stack->top;
+		node->content = content;
+		if (stack->size == 0)
+			stack->begin = node;
+		else
+			stack->top->next = node;
+		stack->top = node;
+		stack->size++;
+	}
+	return (node);
 }

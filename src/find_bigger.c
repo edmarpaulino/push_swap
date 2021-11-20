@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_smaller.c                                     :+:      :+:    :+:   */
+/*   find_bigger.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/14 17:41:18 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/14 17:51:38 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/11/20 14:43:28 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/11/20 14:48:40 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_smaller(t_stack *stack_ref)
+int	find_bigger(t_stack *stack_ref)
 {
 	t_stack			*stack;
-	t_stack_node	*aux;
-	int				smaller;
+	t_stack_node	*node;
+	int				bigger;
 
 	stack = stack_ref;
-	smaller = stack->begin->content;
-	aux = stack->begin;
-	while (aux)
+	node = stack->begin;
+	bigger = node->content;
+	while (node)
 	{
-		if (aux->content < smaller)
-			smaller = aux->content;
-		aux = aux->next;
+		if (bigger < node->content)
+			bigger = node->content;
+		node = node->next;
 	}
-	return (smaller);
+	return (bigger);
 }

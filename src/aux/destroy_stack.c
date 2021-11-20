@@ -1,29 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   destroy_stack.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 17:34:53 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/20 15:11:41 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/11/11 16:55:42 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/11/20 15:17:12 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char *argv[])
+void	destroy_stack(t_stack *stack_ref)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
+	t_stack			*stack;
+	t_stack_node	*aux;
+	t_stack_node	*node;
 
-	check_start_arguments(argc, (const char **)argv);
-	stack_a = stack_create('a');
-	stack_b = stack_create('b');
-	init(stack_a, argc, argv);
-	if (!stack_is_sorted(stack_a))
-		stack_sort(stack_a, stack_b);
-	stack_destroy(stack_a);
-	stack_destroy(stack_b);
-	return (0);
+	stack = stack_ref;
+	node = stack->top;
+	while (node)
+	{
+		aux = node;
+		node = node->prev;
+		free(aux);
+	}
+	free(stack);
+	stack_ref = NULL;
 }

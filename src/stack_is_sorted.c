@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 16:41:49 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/14 16:47:53 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/20 14:47:47 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	stack_is_sorted(t_stack *stack_ref)
 			node = stack->top;
 			while (node)
 			{
-				if (node < node->prev)
+				if (node->content < node->prev->content)
 					node = node->prev;
 				else
 					return (0);
