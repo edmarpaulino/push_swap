@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/11 20:47:38 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/14 16:04:16 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/20 16:11:41 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	stack_reverse_rotate(t_stack *stack_ref)
 		new_begin = stack->begin->next;
 		stack->top->next = stack->begin;
 		stack->top->next->prev = stack->top;
-		stack->top = stack->top->next;
-		stack->top->next->next = NULL;
+		stack->top = stack->begin;
+		stack->top->next = NULL;
 		stack->begin = new_begin;
 		stack->begin->prev = NULL;
 	}
