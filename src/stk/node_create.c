@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   node_create.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/21 12:35:18 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/11/21 12:30:40 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/11/21 12:32:37 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "stack.h"
 
-# include "libft.h"
-# include "stack.h"
-
-# define MIN_INT -2147483648
-# define MAX_INT 2147483647
-
-typedef struct s_data
+t_stack_node	*node_create(int content)
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-}				t_data;
+	t_stack_node	*node;
 
-void	check_start_arguments(const int argc, const char **argv);
-
-#endif
+	node = malloc(sizeof(t_stack_node));
+	if (node)
+	{
+		node->content = content;
+		node->next = NULL;
+		node->prev = NULL;
+	}
+	return (node);
+}

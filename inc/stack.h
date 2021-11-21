@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 11:29:17 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/21 12:21:11 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/21 12:35:55 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define STACK_H
 
 # include "libft.h"
+
+# define EMPTY 0
 
 typedef struct s_stack_node
 {
@@ -29,7 +31,9 @@ typedef struct s_stack
 	int				size;
 }				t_stack;
 
-t_stack	*stack_create(void);
-void	stack_destroy(t_stack *stack_ref);
+t_stack			*stack_create(void);
+void			stack_destroy(t_stack *stack_ref);
+t_stack_node	*node_create(int content);
+void			add_node_to_stack(t_stack *stack_ref, int content);
 
 #endif
