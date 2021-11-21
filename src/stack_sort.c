@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 14:39:22 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/20 17:25:00 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/20 22:15:16 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,6 +142,4 @@ void	stack_sort(t_stack *stack_a_ref, t_stack *stack_b_ref)
 	if (stack_a->top->content != smaller)
 		stack_rotate(stack_a);
 	send_back_to_a(stack_a, stack_b);
-	if (!stack_is_sorted(stack_a))
-		stack_sort(stack_a, stack_b);
 }
