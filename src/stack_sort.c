@@ -6,11 +6,13 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/20 14:39:22 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/20 22:15:16 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/20 22:31:20 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+//	TODO:	check 20% of stack from begin and 20% from top and choose the best
 
 static int	get_distance_from_top(t_stack *stack_ref, int value)
 {
@@ -32,10 +34,10 @@ static int	get_distance_from_top(t_stack *stack_ref, int value)
 //	TODO:	improve this with check from top to begin and from begin to top
 static int	get_direction(t_stack *stack_ref, int bigger, int smaller)
 {
-	t_stack			*stack;
-	int				half;
-	int				counter_bigger;
-	int				counter_smaller;
+	t_stack	*stack;
+	int		half;
+	int		counter_bigger;
+	int		counter_smaller;
 
 	stack = stack_ref;
 	half = stack->size / 2;
