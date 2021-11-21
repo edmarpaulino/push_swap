@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack.h                                            :+:      :+:    :+:   */
+/*   stack_create.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/21 11:29:17 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/21 12:13:47 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/11/21 12:08:22 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/11/21 12:14:08 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STACK_H
-# define STACK_H
+#include "stack.h"
 
-# include "libft.h"
-
-typedef struct s_stack_node
+t_stack	*stack_create(void)
 {
-	int					content;
-	struct s_stack_node	*next;
-	struct s_stack_node	*prev;
-}				t_stack_node;
+	t_stack	*stack;
 
-typedef struct s_stack
-{
-	t_stack_node	*top;
-	t_stack_node	*begin;
-	int				size;
-}				t_stack;
-
-t_stack	*stack_create(void);
-
-#endif
+	stack = malloc(sizeof(t_stack));
+	if (stack)
+	{
+		stack->top = NULL;
+		stack->begin = NULL;
+		stack->size = 0;
+	}
+	return (stack);
+}
