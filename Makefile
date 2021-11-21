@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/11/21 12:36:20 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/11/21 15:04:35 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,8 @@ STK_DIR			=	stk
 STK_FILES		=	stack_create.c \
 					stack_destroy.c \
 					node_create.c \
-					add_node_to_stack.c
+					add_node_to_stack.c \
+					stack_swap.c
 STK_PATH		=	$(addprefix $(STK_DIR)/, $(STK_FILES))
 
 SRC_DIR			=	./src
