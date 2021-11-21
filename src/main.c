@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:34:53 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/20 15:11:41 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/21 11:22:51 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,6 @@
 
 int	main(int argc, char *argv[])
 {
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-
 	check_start_arguments(argc, (const char **)argv);
-	stack_a = stack_create('a');
-	stack_b = stack_create('b');
-	init(stack_a, argc, argv);
-	if (!stack_is_sorted(stack_a))
-		stack_sort(stack_a, stack_b);
-	stack_destroy(stack_a);
-	stack_destroy(stack_b);
 	return (0);
 }
