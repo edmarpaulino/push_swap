@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/11/21 12:14:04 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/11/21 12:21:25 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ AUX_FILES		=	check_start_arguments.c
 AUX_PATH		=	$(addprefix $(AUX_DIR)/, $(AUX_FILES))
 
 STK_DIR			=	stk
-STK_FILES		=	stack_create.c
+STK_FILES		=	stack_create.c \
+					stack_destroy.c
 STK_PATH		=	$(addprefix $(STK_DIR)/, $(STK_FILES))
 
 SRC_DIR			=	./src
