@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   data_destroy.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 17:34:53 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/22 14:59:27 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/11/22 14:54:51 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/11/22 14:58:40 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	data_destroy(t_data *data_ref)
 {
 	t_data	*data;
 
-	check_start_arguments(argc, (const char **)argv);
-	data = malloc(sizeof(t_data));
-	if (!data)
+	if (data_ref)
 	{
-		ft_putendl_fd("Error", 2);
-		return (1);
+		data = data_ref;
+		stack_destroy(data->stack_a);
+		data->stack_a = NULL;
+		stack_destroy(data->stack_b);
+		data->stack_b = NULL;
+		free(data);
+		data_ref = NULL;
 	}
-	init(argc, argv, data);
-	data_destroy(data);
-	return (0);
 }

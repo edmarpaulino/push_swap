@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/22 14:44:45 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/22 14:59:06 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ void	double_swap(t_data *data);
 void	double_rotate(t_data *data);
 void	double_reverse_rotate(t_data *data);
 void	init(int argc, char **argv, t_data *data);
+void	data_destroy(t_data *data_ref);
 
 #endif
