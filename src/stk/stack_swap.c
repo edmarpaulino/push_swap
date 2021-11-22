@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 14:31:08 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/22 11:39:12 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/22 11:57:23 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,11 @@ static void	simple_swap(t_stack *stack_ref)
 	stack = stack_ref;
 	aux = stack->top;
 	stack->top = stack->begin;
-	stack->top->next = NULL;
 	stack->begin = aux;
-	stack->begin->next = stack->top;
+	stack->top->next = NULL;
 	stack->begin->prev = NULL;
+	stack->top->prev = stack->begin;
+	stack->begin->next = stack->top;
 }
 
 static void	complex_swap(t_stack *stack_ref)
