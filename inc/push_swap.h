@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/22 14:01:12 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/22 14:08:23 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,8 @@ void	swap(t_stack *stack_ref);
 void	push(t_stack *stack_src_ref, t_stack *stack_dest_ref);
 void	rotate(t_stack *stack_ref);
 void	reverse_rotate(t_stack *stack_ref);
+void	double_swap(t_data *data);
+void	double_rotate(t_data *data);
+void	double_reverse_rotate(t_data *data);
 
 #endif
