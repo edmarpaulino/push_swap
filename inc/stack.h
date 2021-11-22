@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 11:29:17 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/22 11:58:06 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/22 13:41:50 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_stack
 	t_stack_node	*top;
 	t_stack_node	*begin;
 	int				size;
+	char			name;
 }				t_stack;
 
 t_stack			*stack_create(void);
