@@ -1,28 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 17:34:53 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/22 14:46:01 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/11/22 14:34:19 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/11/22 14:45:58 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	main(int argc, char **argv)
+void	init(int argc, char **argv, t_data *data)
 {
-	t_data	*data;
+	int	index;
 
-	check_start_arguments(argc, (const char **)argv);
-	data = malloc(sizeof(t_data));
-	if (!data)
+	if (argv && data)
 	{
-		ft_putendl_fd("Error", 2);
-		return (1);
+		data->stack_a = stack_create('a');
+		data->stack_b = stack_create('b');
+		index = (argc - 1);
+		while (index > 0)
+		{
+			add_node_to_stack(data->stack_a, ft_atol(argv[index]));
+			index--;
+		}
 	}
-	init(argc, argv, data);
-	return (0);
 }
