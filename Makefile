@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/11/22 11:58:14 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/11/22 13:49:00 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,8 @@ STK_FILES		=	stack_create.c \
 					add_node_to_stack.c \
 					stack_swap.c \
 					stack_push.c \
-					stack_rotate.c
+					stack_rotate.c \
+					stack_reverse_rotate.c
 STK_PATH		=	$(addprefix $(STK_DIR)/, $(STK_FILES))
 
 SRC_DIR			=	./src

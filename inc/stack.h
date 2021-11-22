@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/21 11:29:17 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/22 13:44:47 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/22 13:48:06 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ void			add_node_to_stack(t_stack *stack_ref, int content);
 void			stack_swap(t_stack *stack_ref);
 void			stack_push(t_stack *stack_src_ref, t_stack *stack_dest_ref);
 void			stack_rotate(t_stack *stack_ref);
+void			stack_reverse_rotate(t_stack *stack_ref);
 
 #endif
