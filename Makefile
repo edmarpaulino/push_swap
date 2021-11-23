@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/11/23 14:13:46 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/11/23 14:34:44 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ SRC_FILES		=	main.c \
 					data_destroy.c \
 					push_swap.c \
 					sort_stack_size_two.c \
+					find_smaller.c \
 					$(AUX_PATH) \
 					$(STK_PATH)
 
