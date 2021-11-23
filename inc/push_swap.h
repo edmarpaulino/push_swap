@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/23 14:34:36 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/23 14:42:34 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,6 @@ void	data_destroy(t_data *data_ref);
 void	push_swap(t_data *data);
 void	sort_stack_size_two(t_stack *stack_ref);
 int		find_smaller(t_stack *stack_ref);
+int		find_bigger(t_stack *stack_ref);
 
 #endif
