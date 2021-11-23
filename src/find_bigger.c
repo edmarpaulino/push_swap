@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 14:39:12 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/23 14:40:41 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/23 15:54:21 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	find_bigger(t_stack *stack_ref)
 	{
 		node = stack_ref->top;
 		bigger = node->content;
-		while (node->prev)
+		while (node)
 		{
 			if (bigger < node->content)
 				bigger = node->content;

@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 14:31:43 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/23 14:34:23 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/23 15:54:27 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	find_smaller(t_stack *stack_ref)
 	{
 		node = stack_ref->top;
 		smaller = node->content;
-		while (node->prev)
+		while (node)
 		{
 			if (smaller > node->content)
 				smaller = node->content;
