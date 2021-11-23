@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/11/23 12:05:54 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/11/23 12:16:03 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,7 @@ SRC_FILES		=	main.c \
 					double_operations.c \
 					init.c \
 					data_destroy.c \
+					push_swap.c \
 					$(AUX_PATH) \
 					$(STK_PATH)
 
