@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:02:41 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/24 16:41:18 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/24 18:50:41 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ static void	simple_swap(int *temp, int pos_a, int pos_b)
 	temp[pos_b] = aux;
 }
 
+#include <stdio.h>
+
 static int	get_median_value(int *temp, int len, int stop)
 {
 	int	index;
@@ -30,7 +32,7 @@ static int	get_median_value(int *temp, int len, int stop)
 	med = 0;
 	while (index < (len - 1))
 	{
-		if (temp[index] > temp[index - 1])
+		if (temp[index] > temp[len - 1])
 		{
 			index++;
 			continue ;
@@ -47,6 +49,7 @@ static int	get_median_value(int *temp, int len, int stop)
 	else
 		return (get_median_value(temp + med, len - med, stop - med));
 }
+
 
 int	get_pivot(t_stack *block_ref, int len, int stop)
 {
