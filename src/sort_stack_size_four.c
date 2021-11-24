@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort_stack_size_four.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/23 12:08:09 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/24 15:04:54 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/11/24 15:25:52 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/11/24 15:51:34 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_swap(t_data *data)
+void	sort_stack_size_four(t_data *data)
 {
-	// if (stack_is_sorted_descending(data->stack_a))
-	// 	sort_stack_reverse(data);
-	/*else*/ if (data->stack_a->size == 2)
-		sort_stack_size_two(data->stack_a);
-	else if (data->stack_a->size == 3)
+	int	smaller;
+
+	if (data)
+	{
+		smaller = find_smaller(data->stack_a);
+		if (get_direction(data->stack_a, smaller) < data->stack_a->size / 2)
+		{
+			if (data->stack_a->top->content != smaller)
+				swap(data->stack_a);
+		}
+		else
+		{
+			if (data->stack_a->begin->content != smaller)
+				reverse_rotate(data->stack_a);
+			reverse_rotate(data->stack_a);
+		}
+		push(data->stack_a, data->stack_b);
 		sort_stack_size_three(data->stack_a);
-	else if (data->stack_a->size == 4)
-		sort_stack_size_four(data);
-	// else if (data->stack_a->size == 5 || data->stack_a->size == 6)
-	// 	simple_sort(data);
-	// else
-	// 	complex_sort(data);
+		push(data->stack_b, data->stack_a);
+	}
 }
