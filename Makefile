@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/11/23 15:39:23 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/11/24 15:40:29 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ SRC_FILES		=	main.c \
 					find_smaller.c \
 					find_bigger.c \
 					sort_stack_size_three.c \
+					get_direction.c \
 					$(AUX_PATH) \
 					$(STK_PATH)
 
