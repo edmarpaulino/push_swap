@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/26 10:45:32 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/26 11:08:09 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,6 @@ void	sort_stack_size_four(t_data *data);
 int		get_pivot(t_stack *block_ref, int len);
 void	sort_stack_size_two_reverse(t_stack *stack_ref);
 void	sort_stack_size_five(t_data *data);
+void	sort_stack_size_three_reverse(t_stack *stack_ref);
 
 #endif
