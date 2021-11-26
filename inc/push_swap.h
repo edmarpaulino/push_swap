@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/24 18:30:14 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/26 10:36:38 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,8 @@ int		find_bigger(t_stack *stack_ref);
 void	sort_stack_size_three(t_stack *stack_ref);
 int		get_direction(t_stack *stack_ref, int value);
 void	sort_stack_size_four(t_data *data);
-int		get_pivot(t_stack *block_ref, int len, int stop);
+int		get_pivot(t_stack *block_ref, int len);
 void	sort_stack_size_two_reverse(t_stack *stack_ref);
-void	sort_stack_b_size_three(t_data *data);
 void	simple_sort(t_data *data);
 
 #endif

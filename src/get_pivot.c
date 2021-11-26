@@ -6,70 +6,85 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:02:41 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/24 18:50:41 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/26 10:31:23 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	simple_swap(int *temp, int pos_a, int pos_b)
+static void	swap2(int *list, int j, int i)
 {
 	int	aux;
 
-	aux = temp[pos_a];
-	temp[pos_a] = temp[pos_b];
-	temp[pos_b] = aux;
+	aux = list[j];
+	list[j] = list[i];
+	list[i] = aux;
 }
 
-#include <stdio.h>
-
-static int	get_median_value(int *temp, int len, int stop)
+static int	partition(int *list, int begin, int end)
 {
-	int	index;
-	int	med;
+	int	pivot;
+	int	i;
+	int	j;
 
-	index = 0;
-	med = 0;
-	while (index < (len - 1))
+	pivot = list[end];
+	i = begin;
+	j = begin;
+	while (j < end)
 	{
-		if (temp[index] > temp[len - 1])
+		if (list[j] <= pivot)
 		{
-			index++;
-			continue ;
+			swap2(list, j, i);
+			i++;
 		}
-		simple_swap(temp, index, med);
-		index++;
-		med++;
+		j++;
 	}
-	simple_swap(temp, len - 1, med);
-	if (stop == med)
-		return (temp[med]);
-	else if (med > stop)
-		return (get_median_value(temp, med, stop));
-	else
-		return (get_median_value(temp + med, len - med, stop - med));
+	swap2(list, i, end);
+	return (i);
 }
 
+static void	quicksort(int *list, int begin, int end)
+{
+	int	pivot;
 
-int	get_pivot(t_stack *block_ref, int len, int stop)
+	if (begin < end)
+	{
+		pivot = partition(list, begin, end);
+		quicksort(list, begin, (pivot - 1));
+		quicksort(list, (pivot + 1), end);
+	}
+}
+
+static int	*get_list(t_stack *block_ref, int len)
+{
+	int				*list;
+	int				index;
+	t_stack_node	*block_node;
+
+	list = malloc(len * sizeof(int));
+	if (!list)
+		return (NULL);
+	block_node = block_ref->begin;
+	index = 0;
+	while (index < len && block_node)
+	{
+		list[index] = block_node->content;
+		block_node = block_node->next;
+		index++;
+	}
+	return (list);
+}
+
+int	get_pivot(t_stack *block_ref, int len)
 {
 	int				pivot;
-	int				index;
 	int				*temp;
-	t_stack_node	*block;
-
-	temp = malloc(len * sizeof(int));
+	
+	temp = get_list(block_ref, len);
 	if (!temp)
 		return (0);
-	block = block_ref->top;
-	index = 0;
-	while (index < len && block)
-	{
-		temp[index] = block->content;
-		block = block->prev;
-		index++;
-	}
-	pivot = get_median_value(temp, len, stop);
+	quicksort(temp, 0, (len - 1));
+	pivot = temp[(len / 2)];
 	free(temp);
 	return (pivot);
 }
