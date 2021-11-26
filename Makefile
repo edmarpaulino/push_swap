@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/11/26 10:53:47 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/11/26 11:18:59 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,6 +46,7 @@ SRC_FILES		=	main.c \
 					get_pivot.c \
 					sort_stack_size_two_reverse.c \
 					sort_stack_size_five.c \
+					sort_stack_size_three_reverse.c \
 					$(AUX_PATH) \
 					$(STK_PATH)
 

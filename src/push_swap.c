@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 12:08:09 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/26 11:06:44 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/26 11:19:12 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	push_swap(t_data *data)
 		sort_stack_size_four(data);
 	else if (data->stack_a->size == 5)
 		sort_stack_size_five(data);
-	else if (data->stack_a->size == 6)
-		sort_stack_size_six(data);
+	// else if (data->stack_a->size == 6)
+	// 	sort_stack_size_six(data);
 	// else
 		// complex_sort(data);
 }
