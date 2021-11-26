@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   simple_sort.c                                      :+:      :+:    :+:   */
+/*   sort_stack_size_five.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:53:41 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/26 10:36:26 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/26 10:45:47 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	simple_sort(t_data *data)
+void	sort_stack_size_five(t_data *data)
 {
 
 }
