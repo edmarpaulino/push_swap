@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/11/26 14:18:00 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/11/27 12:37:28 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,7 @@ SRC_FILES		=	main.c \
 					sort_stack_size_three_reverse.c \
 					sort_stack_size_six.c \
 					complex_sort.c \
+					sort_three_of_top.c \
 					$(AUX_PATH) \
 					$(STK_PATH)
 
