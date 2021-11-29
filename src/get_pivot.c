@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:02:41 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/26 15:58:59 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/29 12:09:13 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,12 @@ static int	*get_list(t_stack *block_ref, int len)
 	list = malloc(len * sizeof(int));
 	if (!list)
 		return (NULL);
-	block_node = block_ref->begin;
+	block_node = block_ref->top;
 	index = 0;
 	while (index < len && block_node)
 	{
 		list[index] = block_node->content;
-		block_node = block_node->next;
+		block_node = block_node->prev;
 		index++;
 	}
 	return (list);
