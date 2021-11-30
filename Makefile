@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/11/30 10:46:03 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/11/30 16:06:06 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,6 +48,10 @@ SRC_FILES		=	main.c \
 					sort_stack_size_five.c \
 					sort_stack_size_three_reverse.c \
 					sort_stack_size_six.c \
+					get_hold.c \
+					send_hold.c \
+					send_chunk.c \
+					send_back_to_a.c \
 					sort_stack_size_up_to_hundred.c \
 					sort_stack_greater_than_hundred.c \
 					$(AUX_PATH) \
