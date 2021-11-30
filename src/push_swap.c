@@ -6,16 +6,12 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 12:08:09 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/30 16:25:22 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/11/30 19:44:20 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-	// if (stack_is_sorted_descending(data->stack_a))
-	// 	sort_stack_reverse(data);
-	//	stack size up to 100
-	//	stack size up to 500
 void	push_swap(t_data *data)
 {
 	if (data->stack_a->size == 2)
