@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/11/30 16:06:06 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/12/01 14:52:19 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,13 @@ NAME			=	push_swap
 BONUS_NAME		=	
 
 AUX_DIR			=	aux
-AUX_FILES		=	check_start_arguments.c
+AUX_FILES		=	check_start_arguments.c \
+					init.c \
+					data_destroy.c \
+					find_smaller.c \
+					find_bigger.c \
+					get_direction.c \
+					get_pivot.c
 AUX_PATH		=	$(addprefix $(AUX_DIR)/, $(AUX_FILES))
 
 STK_DIR			=	stk
@@ -30,20 +36,10 @@ STK_FILES		=	stack_create.c \
 					stack_is_sorted_descending.c
 STK_PATH		=	$(addprefix $(STK_DIR)/, $(STK_FILES))
 
-SRC_DIR			=	./src
-SRC_FILES		=	main.c \
-					unique_operations.c \
-					double_operations.c \
-					init.c \
-					data_destroy.c \
-					push_swap.c \
-					sort_stack_size_two.c \
-					find_smaller.c \
-					find_bigger.c \
+SORT_DIR		=	sort
+SORT_FILES		=	sort_stack_size_two.c \
 					sort_stack_size_three.c \
-					get_direction.c \
 					sort_stack_size_four.c \
-					get_pivot.c \
 					sort_stack_size_two_reverse.c \
 					sort_stack_size_five.c \
 					sort_stack_size_three_reverse.c \
@@ -53,8 +49,16 @@ SRC_FILES		=	main.c \
 					send_chunk.c \
 					send_back_to_a.c \
 					sort_stack_size_up_to_hundred.c \
-					sort_stack_greater_than_hundred.c \
+					sort_stack_greater_than_hundred.c
+SORT_PATH		=	$(addprefix $(SORT_DIR)/, $(SORT_FILES))
+
+SRC_DIR			=	./src
+SRC_FILES		=	main.c \
+					unique_operations.c \
+					double_operations.c \
+					push_swap.c \
 					$(AUX_PATH) \
+					$(SORT_PATH) \
 					$(STK_PATH)
 
 BONUS_DIR		=	
