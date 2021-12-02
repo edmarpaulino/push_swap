@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 12:08:09 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/30 19:44:20 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/01 16:11:57 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ void	push_swap(t_data *data)
 		sort_stack_size_five(data);
 	else if (data->stack_a->size == 6)
 		sort_stack_size_six(data);
-	else if (data->stack_a->size <= 100)
-		sort_stack_size_up_to_hundred(data);
 	else
-		sort_stack_greater_than_hundred(data);
+		complex_sort(data);
+	// else if (data->stack_a->size <= 100)
+	// 	sort_stack_size_up_to_hundred(data);
+	// else
+	// 	sort_stack_greater_than_hundred(data);
 }

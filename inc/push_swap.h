@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/01 15:03:00 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/02 11:32:47 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,22 @@
 # define MIN_INT -2147483648
 # define MAX_INT 2147483647
 
+// test
+typedef struct s_block
+{
+	int				size;
+	struct s_block	*next;
+}				t_block;
+
 typedef struct s_data
 {
 	t_stack	*stack_a;
+	t_block	*block_a;
+	int		sorted_a;
 	t_stack	*stack_b;
+	t_block	*block_b;
+	int		sorted_b;
+	
 }				t_data;
 
 //		auxiliar
@@ -62,5 +74,18 @@ void	send_chunk(int start, int chunk_size, t_data *data);
 void	send_back_to_a(t_data *data);
 void	sort_stack_size_up_to_hundred(t_data *data);
 void	sort_stack_greater_than_hundred(t_data *data);
+
+//	test
+void	complex_sort(t_data *data);
+t_block	*create_block(int value);
+void	add_node_to_block(t_block *block, int value);
+void	destroy_block(t_block *block);
+t_block	*get_last_block(t_block *block);
+void	destroy_last_block(t_block *block);
+void	sort_top_a_two(t_data *data);
+void	sort_top_a_three(t_data *data);
+void	sort_top_b_two(t_data *data);
+void	sort_top_b_three(t_data *data);
+void	complex_sort_b(t_data *data);
 
 #endif

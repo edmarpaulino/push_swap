@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/12/01 14:52:19 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/12/02 11:32:57 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,6 +57,10 @@ SRC_FILES		=	main.c \
 					unique_operations.c \
 					double_operations.c \
 					push_swap.c \
+					block_handler.c \
+					complex_sort.c \
+					complex_sort_b.c \
+					sort_top.c \
 					$(AUX_PATH) \
 					$(SORT_PATH) \
 					$(STK_PATH)
