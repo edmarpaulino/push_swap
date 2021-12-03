@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/03 08:13:48 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/03 08:24:05 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,5 +67,9 @@ void	sort_stack_greater_than_hundred(t_data *data);
 
 //		test
 void	complex_sort(t_data *data);
+void	sort_top_a_two(t_data *data);
+void	sort_top_a_three(t_data *data);
+void	sort_top_b_two(t_data *data);
+void	sort_top_b_three(t_data *data);
 
 #endif
