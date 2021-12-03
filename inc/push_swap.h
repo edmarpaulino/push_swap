@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/01 15:03:00 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/03 08:13:48 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@
 typedef struct s_data
 {
 	t_stack	*stack_a;
+	int		sorted_a;
 	t_stack	*stack_b;
+	int		sorted_b;
 }				t_data;
 
 //		auxiliar
@@ -62,5 +64,8 @@ void	send_chunk(int start, int chunk_size, t_data *data);
 void	send_back_to_a(t_data *data);
 void	sort_stack_size_up_to_hundred(t_data *data);
 void	sort_stack_greater_than_hundred(t_data *data);
+
+//		test
+void	complex_sort(t_data *data);
 
 #endif
