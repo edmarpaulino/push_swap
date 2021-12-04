@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 21:10:09 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/04 16:57:34 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/04 17:14:12 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ static int	partition(t_data *data, int sent_block, int pivot, int have_rra)
 		else if (!less_three && data->stack_a->top->content == pivot)
 		{
 			pivot_moved = push_pivot(data, &rotate_count, pivot);
-			sent_block--;
+			// sent_block--;
 		}
 		else
 		{
@@ -90,7 +90,7 @@ void	split_stack_a(t_data *data, int block_size, int have_rra)
 	{
 		reverse_rotate(data->stack_b);
 		push(data->stack_b, data->stack_a);
-		sent_block--;
+		// sent_block--;
 	}
 	if (sent_block != data->stack_b->size)
 		split_stack_b(data, sent_block, HAVE_RR);
