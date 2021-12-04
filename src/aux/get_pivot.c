@@ -6,11 +6,12 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:02:41 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/29 12:09:13 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/04 15:33:53 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h> // tirar
 
 static void	swap2(int *list, int j, int i)
 {
@@ -30,8 +31,12 @@ static int	partition(int *list, int begin, int end)
 	pivot = list[end];
 	i = begin;
 	j = begin;
+	printf("this is the 'j': %d\n", j);
 	while (j < end)
 	{
+		printf("list[j]: %d\n", list[j]);
+		printf("end: %d\n", end);
+		printf("pivot: %d\n", pivot);
 		if (list[j] <= pivot)
 		{
 			swap2(list, j, i);

@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/01 15:03:00 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/04 10:28:49 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 
 # define MIN_INT -2147483648
 # define MAX_INT 2147483647
+
+# define HAVE_RR 1
+# define NOT_HAVE_RR 0
 
 typedef struct s_data
 {
@@ -62,5 +65,14 @@ void	send_chunk(int start, int chunk_size, t_data *data);
 void	send_back_to_a(t_data *data);
 void	sort_stack_size_up_to_hundred(t_data *data);
 void	sort_stack_greater_than_hundred(t_data *data);
+
+//		test
+void	complex_sort(t_data *data);
+void	split_stack_a(t_data *data, int block_size, int have_rra);
+void	split_stack_b(t_data *data, int block_size, int have_rrb);
+void	sort_two_at_top_a(t_data *data);
+void	sort_three_at_top_a(t_data *data);
+void	sort_two_at_top_b(t_data *data);
+void	sort_three_at_top_b(t_data *data);
 
 #endif
