@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 16:27:35 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/04 10:27:34 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/04 16:45:43 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ void	sort_two_at_top_b(t_data *data)
 	{
 		if (data->stack_b->top->content < data->stack_b->top->prev->content)
 			swap(data->stack_b);
+		push(data->stack_b, data->stack_a);
+		push(data->stack_b, data->stack_a);
 	}
 }
 
@@ -140,5 +142,8 @@ void	sort_three_at_top_b(t_data *data)
 			swap(data->stack_b);
 			reverse_rotate(data->stack_b);
 		}
+		push(data->stack_b, data->stack_a);
+		push(data->stack_b, data->stack_a);
+		push(data->stack_b, data->stack_a);
 	}
 }

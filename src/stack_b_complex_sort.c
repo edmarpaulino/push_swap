@@ -6,11 +6,12 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 10:01:48 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/04 16:23:06 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/04 16:46:11 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 static void	sort_b(t_data *data, int block_size)
 {
@@ -66,6 +67,7 @@ void	split_stack_b(t_data *data, int block_size, int have_rrb)
 	int	index_rrb;
 	int	rotate_count;
 	int	pushed;
+	// printf("block_size in b: %d\n", block_size);
 	if (block_size < 4)
 	{
 		sort_b(data, block_size);

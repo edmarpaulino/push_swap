@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 21:10:09 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/04 16:33:36 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/04 16:57:34 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	partition(t_data *data, int sent_block, int pivot, int have_rra)
 	rotate_count = 0;
 	pivot_moved = 0;
 	less_three = sent_block < 3;
-	printf("sent_block: %d\n", sent_block);
+	// printf("sent_block: %d\n", sent_block);
 	while (sent_block > 0)
 	{
 		if (data->stack_a->top->content < pivot)
@@ -73,6 +73,7 @@ void	split_stack_a(t_data *data, int block_size, int have_rra)
 	int	pivot;
 	int	pivot_moved;
 
+	// printf("block_size %d\n", block_size);
 	if (block_size < 4)
 	{
 		sort_a(data, block_size);
