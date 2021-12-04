@@ -1,21 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   complex_sort.c                                     :+:      :+:    :+:   */
+/*   sort_descending.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/03 21:04:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/04 20:24:26 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/12/04 20:24:41 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/12/04 20:43:17 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	complex_sort(t_data *data)
+void	sort_descending(t_data *data)
 {
-	if (stack_is_sorted_descending(data->stack_a))
-		sort_descending(data);
-	else
-		split_stack_a(data, data->stack_a->size, NOT_HAVE_RR);
+	rotate(data->stack_a);
+	rotate(data->stack_a);
+	rotate(data->stack_a);
+	while (data->stack_a->size > 3)
+		push(data->stack_a, data->stack_b);
+	// sort_stack_size_three(data->stack_a);
+	double_swap(data);
+	double_reverse_rotate(data);
+	while (data->stack_b->size > 0)
+	{
+		push(data->stack_b, data->stack_a);
+		if (data->stack_b->size > 2)
+			reverse_rotate(data->stack_b);
+	}
 }

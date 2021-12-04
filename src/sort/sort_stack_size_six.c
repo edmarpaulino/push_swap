@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 11:21:09 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/26 11:24:11 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/04 20:39:02 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ void	sort_stack_size_six(t_data *data)
 
 	if (data)
 	{
-		pivot = get_pivot(data->stack_a, data->stack_a->size);
+		pivot = get_pivot(data->stack_a, data->stack_a->size, 0);
 		while (data->stack_a->size > 3)
 		{
-			if (data->stack_a->top->content <= pivot)
+			if (data->stack_a->top->content < pivot)
 				push(data->stack_a, data->stack_b);
 			else
 				rotate(data->stack_a);

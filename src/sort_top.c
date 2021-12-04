@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 16:27:35 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/04 16:45:43 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/04 20:14:02 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,12 +93,14 @@ void	sort_three_at_top_b(t_data *data)
 	t_stack_node	*first;
 	t_stack_node	*second;
 	t_stack_node	*third;
+	int				index;
 
 	if (data)
 	{
 		first = data->stack_b->top;
 		second = first->prev;
 		third = second->prev;
+		index = 3;
 		if (first->content < second->content \
 			&& second->content < third->content \
 			&&	third->content > first->content)
@@ -114,9 +116,9 @@ void	sort_three_at_top_b(t_data *data)
 			&& third->content > first->content)
 		{
 			swap(data->stack_b);
-			rotate(data->stack_b);
+			push(data->stack_b, data->stack_a);
+			index--;
 			swap(data->stack_b);
-			reverse_rotate(data->stack_b);
 		}
 		else if (first->content < second->content \
 			&& second->content > third->content \
@@ -138,12 +140,11 @@ void	sort_three_at_top_b(t_data *data)
 			&& second->content < third->content \
 			&& third->content < first->content)
 		{
-			rotate(data->stack_b);
+			push(data->stack_b, data->stack_a);
+			index--;
 			swap(data->stack_b);
-			reverse_rotate(data->stack_b);
 		}
-		push(data->stack_b, data->stack_a);
-		push(data->stack_b, data->stack_a);
-		push(data->stack_b, data->stack_a);
+		while (index-- > 0)
+			push(data->stack_b, data->stack_a);
 	}
 }

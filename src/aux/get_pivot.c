@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:02:41 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/04 16:57:09 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/04 19:31:46 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ static int	*get_list(t_stack *block_ref, int len)
 	return (list);
 }
 
-int	get_pivot(t_stack *block_ref, int len)
+int	get_pivot(t_stack *block_ref, int len, int flag)
 {
 	int	pivot;
 	int	*temp;
@@ -84,10 +84,20 @@ int	get_pivot(t_stack *block_ref, int len)
 	if (!temp)
 		return (0);
 	quicksort(temp, 0, (len - 1));
-	if ((len % 2) == 0)
-		pivot = temp[(len / 2)];
+	if (flag == 0)
+	{
+		if ((len % 2) == 0)
+			pivot = temp[(len / 2)];
+		else
+			pivot = temp[(len / 2) + 1];
+	}
 	else
-		pivot = temp[(len / 2) + 1];
+	{
+	    if ((len % 2) == 0)
+	        pivot = temp[(len / 2) - 1];
+	    else
+	        pivot = temp[(len / 2)];
+	}
 	free(temp);
 	return (pivot);
 }

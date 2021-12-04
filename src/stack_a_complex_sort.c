@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 21:10:09 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/04 17:14:12 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/04 20:43:35 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ static int	partition(t_data *data, int sent_block, int pivot, int have_rra)
 	rotate_count = 0;
 	pivot_moved = 0;
 	less_three = sent_block < 3;
-	// printf("sent_block: %d\n", sent_block);
+
 	while (sent_block > 0)
 	{
 		if (data->stack_a->top->content < pivot)
@@ -52,10 +52,7 @@ static int	partition(t_data *data, int sent_block, int pivot, int have_rra)
 			sent_block--;
 		}
 		else if (!less_three && data->stack_a->top->content == pivot)
-		{
 			pivot_moved = push_pivot(data, &rotate_count, pivot);
-			// sent_block--;
-		}
 		else
 		{
 			rotate(data->stack_a);
@@ -73,7 +70,6 @@ void	split_stack_a(t_data *data, int block_size, int have_rra)
 	int	pivot;
 	int	pivot_moved;
 
-	// printf("block_size %d\n", block_size);
 	if (block_size < 4)
 	{
 		sort_a(data, block_size);
@@ -83,14 +79,13 @@ void	split_stack_a(t_data *data, int block_size, int have_rra)
 		sent_block = (block_size / 2);
 	else
 		sent_block = ((block_size / 2) + 1);
-	pivot = get_pivot(data->stack_a, block_size);
+	pivot = get_pivot(data->stack_a, block_size, 0);
 	pivot_moved = partition(data, sent_block, pivot, have_rra);
 	split_stack_a(data, (block_size - sent_block - pivot_moved), have_rra);
 	if (pivot_moved != 0 && data->stack_b->begin->content == pivot)
 	{
 		reverse_rotate(data->stack_b);
 		push(data->stack_b, data->stack_a);
-		// sent_block--;
 	}
 	if (sent_block != data->stack_b->size)
 		split_stack_b(data, sent_block, HAVE_RR);

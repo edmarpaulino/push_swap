@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/04 10:28:49 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/04 20:30:53 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	init(int argc, char **argv, t_data *data);
 void	data_destroy(t_data *data_ref);
 int		find_smaller(t_stack *stack_ref);
 int		find_bigger(t_stack *stack_ref);
-int		get_pivot(t_stack *block_ref, int len);
+// int		get_pivot(t_stack *block_ref, int len);
 int		get_direction(t_stack *stack_ref, int value);
 
 //		operations
@@ -74,5 +74,7 @@ void	sort_two_at_top_a(t_data *data);
 void	sort_three_at_top_a(t_data *data);
 void	sort_two_at_top_b(t_data *data);
 void	sort_three_at_top_b(t_data *data);
+int		get_pivot(t_stack *block_ref, int len, int flag);
+void	sort_descending(t_data *data);
 
 #endif
