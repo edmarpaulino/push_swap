@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 10:01:48 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/04 15:16:03 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/04 16:23:06 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,6 @@ void	split_stack_b(t_data *data, int block_size, int have_rrb)
 {
 	int	pivot;
 	int	index_rrb;
-	// int	sent_block;
 	int	rotate_count;
 	int	pushed;
 	if (block_size < 4)
@@ -72,10 +71,6 @@ void	split_stack_b(t_data *data, int block_size, int have_rrb)
 		sort_b(data, block_size);
 		return ;
 	}
-	// if ((block_size % 2) == 0)
-	// 	sent_block = ((block_size / 2) - 1);
-	// else
-	// 	sent_block = (block_size / 2);
 	pivot = get_pivot(data->stack_b, block_size);
 	rotate_count = partition(data, block_size, pivot, &pushed);
 	split_stack_a(data, pushed, have_rrb);
