@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/04 20:30:53 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/05 10:33:24 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,14 @@ typedef struct s_data
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 }				t_data;
+
+typedef struct s_sort
+{
+	int	first;
+	int	second;
+	int	third;
+	int	index;
+}				t_sort;
 
 //		auxiliar
 void	check_start_arguments(const int argc, const char **argv);
