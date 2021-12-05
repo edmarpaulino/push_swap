@@ -6,12 +6,11 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 21:10:09 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/04 20:43:35 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/04 21:08:39 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 static void	sort_a(t_data *data, int block_size)
 {
@@ -21,7 +20,7 @@ static void	sort_a(t_data *data, int block_size)
 		sort_three_at_top_a(data);
 }
 
-static int 	push_pivot(t_data *data, int *rotate_count, int pivot)
+static int	push_pivot(t_data *data, int *rotate_count, int pivot)
 {
 	push(data->stack_a, data->stack_b);
 	if (data->stack_a->top->content > pivot)
@@ -43,7 +42,6 @@ static int	partition(t_data *data, int sent_block, int pivot, int have_rra)
 	rotate_count = 0;
 	pivot_moved = 0;
 	less_three = sent_block < 3;
-
 	while (sent_block > 0)
 	{
 		if (data->stack_a->top->content < pivot)

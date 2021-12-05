@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 16:27:35 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/04 20:14:02 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/04 21:06:48 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	sort_three_at_top_a(t_data *data)
 		third = second->prev;
 		if (first->content < second->content \
 			&& second->content > third->content \
-			&&	third->content > first->content)
+			&& third->content > first->content)
 		{
 			rotate(data->stack_a);
 			swap(data->stack_a);
@@ -103,7 +103,7 @@ void	sort_three_at_top_b(t_data *data)
 		index = 3;
 		if (first->content < second->content \
 			&& second->content < third->content \
-			&&	third->content > first->content)
+			&& third->content > first->content)
 		{
 			swap(data->stack_b);
 			rotate(data->stack_b);
@@ -126,7 +126,6 @@ void	sort_three_at_top_b(t_data *data)
 		{
 			swap(data->stack_b);
 		}
-
 		else if (first->content > second->content \
 			&& second->content < third->content \
 			&& third->content > first->content)

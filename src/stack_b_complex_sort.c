@@ -6,12 +6,11 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 10:01:48 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/04 19:57:33 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/04 21:08:18 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 static void	sort_b(t_data *data, int block_size)
 {

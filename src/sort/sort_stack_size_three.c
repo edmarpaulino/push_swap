@@ -6,12 +6,11 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 14:24:30 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/23 16:23:38 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/04 21:08:43 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
 
 void	sort_stack_size_three(t_stack *stack_ref)
 {
