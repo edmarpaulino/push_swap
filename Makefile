@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/12/04 21:30:40 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/12/05 10:56:40 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,12 +44,12 @@ SORT_FILES		=	sort_stack_size_two.c \
 					sort_stack_size_five.c \
 					sort_stack_size_three_reverse.c \
 					sort_stack_size_six.c \
-					get_hold.c \
-					send_hold.c \
-					send_chunk.c \
-					send_back_to_a.c \
-					sort_stack_size_up_to_hundred.c \
-					sort_stack_greater_than_hundred.c
+					complex_sort.c \
+					stack_a_complex_sort.c \
+					stack_b_complex_sort.c \
+					sort_top_a.c \
+					sort_top_b.c \
+					sort_descending.c
 SORT_PATH		=	$(addprefix $(SORT_DIR)/, $(SORT_FILES))
 
 SRC_DIR			=	./src
@@ -57,12 +57,6 @@ SRC_FILES		=	main.c \
 					unique_operations.c \
 					double_operations.c \
 					push_swap.c \
-					complex_sort.c \
-					stack_a_complex_sort.c \
-					stack_b_complex_sort.c \
-					sort_top_a.c \
-					sort_top_b.c \
-					sort_descending.c \
 					$(AUX_PATH) \
 					$(SORT_PATH) \
 					$(STK_PATH)

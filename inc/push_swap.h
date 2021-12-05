@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/05 10:33:24 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/05 10:59:54 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	init(int argc, char **argv, t_data *data);
 void	data_destroy(t_data *data_ref);
 int		find_smaller(t_stack *stack_ref);
 int		find_bigger(t_stack *stack_ref);
-// int		get_pivot(t_stack *block_ref, int len);
+int		get_pivot(t_stack *block_ref, int len, int flag);
 int		get_direction(t_stack *stack_ref, int value);
 
 //		operations
@@ -65,16 +65,6 @@ void	sort_stack_size_two_reverse(t_stack *stack_ref);
 void	sort_stack_size_five(t_data *data);
 void	sort_stack_size_three_reverse(t_stack *stack_ref);
 void	sort_stack_size_six(t_data *data);
-int		get_hold_first(int start, int end, t_data *data);
-int		get_hold_second(int start, int end, t_data *data);
-void	send_hold_first(int hold_first, t_data *data);
-void	send_hold_second(int hold_second, t_data *data);
-void	send_chunk(int start, int chunk_size, t_data *data);
-void	send_back_to_a(t_data *data);
-void	sort_stack_size_up_to_hundred(t_data *data);
-void	sort_stack_greater_than_hundred(t_data *data);
-
-//		test
 void	complex_sort(t_data *data);
 void	split_stack_a(t_data *data, int block_size, int have_rra);
 void	split_stack_b(t_data *data, int block_size, int have_rrb);
@@ -82,7 +72,6 @@ void	sort_two_at_top_a(t_data *data);
 void	sort_three_at_top_a(t_data *data);
 void	sort_two_at_top_b(t_data *data);
 void	sort_three_at_top_b(t_data *data);
-int		get_pivot(t_stack *block_ref, int len, int flag);
 void	sort_descending(t_data *data);
 
 #endif
