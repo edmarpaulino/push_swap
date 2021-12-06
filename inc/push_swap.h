@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/05 10:59:54 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/06 11:14:21 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,10 @@ void	sort_three_at_top_a(t_data *data);
 void	sort_two_at_top_b(t_data *data);
 void	sort_three_at_top_b(t_data *data);
 void	sort_descending(t_data *data);
+
+//	test
+int		has_at_least_one_digit(int argc, char **argv);
+void	clear_splits(char ***splits);
+char	***get_splits(int argc, char **argv);
 
 #endif

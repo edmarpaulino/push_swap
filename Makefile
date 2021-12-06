@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/12/05 10:56:40 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/12/06 11:14:31 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,10 @@ AUX_FILES		=	check_start_arguments.c \
 					find_smaller.c \
 					find_bigger.c \
 					get_direction.c \
-					get_pivot.c
+					get_pivot.c \
+					has_at_least_one_digit.c \
+					clear_splits.c \
+					get_splits.c
 AUX_PATH		=	$(addprefix $(AUX_DIR)/, $(AUX_FILES))
 
 STK_DIR			=	stk

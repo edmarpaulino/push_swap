@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   get_splits.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 17:34:53 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/06 11:33:04 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/12/06 11:09:59 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/12/06 11:23:13 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h> // remove later
 
-int	main(int argc, char **argv)
+char	***get_splits(int argc, char **argv)
 {
-	char	***group;
+	char	***splits;
 	int		index;
-	int		index_split;
 
-	if (argc > 1)
+	splits = malloc(argc * sizeof(char **));
+	if (splits)
 	{
-		group = get_splits(argc, argv);
 		index = 0;
-		while (group[index])
+		while ((index + 1) < argc)
 		{
-			index_split = 0;
-			while (group[index][index_split])
+			splits[index] = ft_split_space(argv[index + 1]);
+			if (!splits[index])
 			{
-				printf("%d - %s\n", index_split, group[index][index_split]);
-				index_split++;
+				clear_splits(splits);
+				return (NULL);
 			}
 			index++;
 		}
-		clear_splits(group);
+		splits[index] = NULL;
 	}
-	return (0);
+	return (splits);
 }

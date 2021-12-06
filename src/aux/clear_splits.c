@@ -1,39 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   clear_splits.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 17:34:53 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/06 11:33:04 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/12/06 11:07:09 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/12/06 11:08:37 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h> // remove later
 
-int	main(int argc, char **argv)
+void	clear_splits(char ***splits)
 {
-	char	***group;
-	int		index;
-	int		index_split;
+	int	index;
 
-	if (argc > 1)
+	index = 0;
+	while (splits[index])
 	{
-		group = get_splits(argc, argv);
-		index = 0;
-		while (group[index])
-		{
-			index_split = 0;
-			while (group[index][index_split])
-			{
-				printf("%d - %s\n", index_split, group[index][index_split]);
-				index_split++;
-			}
-			index++;
-		}
-		clear_splits(group);
+		ft_clear_split(splits[index]);
+		index++;
 	}
-	return (0);
+	free(splits);
+	splits = NULL;
 }
