@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/09 16:48:38 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/10/11 12:21:23 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/06 09:24:36 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ size_t	ft_word_counter(const char *str)
 	count = 0;
 	while (str[i])
 	{
-		if (!ft_iswhitespace(str[i]) \
-			&& (ft_iswhitespace(str[i + 1]) || !str[i + 1]))
+		if (!ft_isspace(str[i]) \
+			&& (ft_isspace(str[i + 1]) || !str[i + 1]))
 			++count;
 		++i;
 	}
