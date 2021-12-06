@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/12/06 11:14:31 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/12/06 11:58:33 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,8 @@ STK_FILES		=	stack_create.c \
 					stack_rotate.c \
 					stack_reverse_rotate.c \
 					stack_is_sorted_ascending.c \
-					stack_is_sorted_descending.c
+					stack_is_sorted_descending.c \
+					add_node_begin.c
 STK_PATH		=	$(addprefix $(STK_DIR)/, $(STK_FILES))
 
 SORT_DIR		=	sort

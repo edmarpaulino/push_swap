@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/06 11:14:21 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/06 11:51:52 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ typedef struct s_sort
 
 //		auxiliar
 void	check_start_arguments(const int argc, const char **argv);
-void	init(int argc, char **argv, t_data *data);
+// void	init(int argc, char **argv, t_data *data);
 void	data_destroy(t_data *data_ref);
 int		find_smaller(t_stack *stack_ref);
 int		find_bigger(t_stack *stack_ref);
@@ -78,5 +78,6 @@ void	sort_descending(t_data *data);
 int		has_at_least_one_digit(int argc, char **argv);
 void	clear_splits(char ***splits);
 char	***get_splits(int argc, char **argv);
+void	init(const char ***splits, t_data *data);
 
 #endif

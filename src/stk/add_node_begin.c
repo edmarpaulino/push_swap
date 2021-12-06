@@ -1,36 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   add_node_begin.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/22 14:34:19 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/06 11:58:59 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/12/06 11:53:34 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/12/06 11:56:30 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "stack.h"
 
-void	init(const char ***splits, t_data *data)
+void	add_node_begin(t_stack *stack_ref, int content)
 {
-	int	i;
-	int	j;
+	t_stack			*stack;
+	t_stack_node	*node;
 
-	if (splits && data)
+	if (stack_ref)
 	{
-		data->stack_a = stack_create('a');
-		data->stack_b = stack_create('b');
-		i = 0;
-		while (splits[i])
+		node = node_create(content);
+		if (node)
 		{
-			j = 0;
-			while (splits[i][j])
+			stack = stack_ref;
+			if (stack->size == EMPTY)
 			{
-				add_node_begin(data->stack_a, ft_atol(splits[i][j]));
-				j++;
+				stack->begin = node;
+				stack->top = node;
 			}
-			i++;
+			else
+			{
+				node->next = stack->begin;
+				stack->begin->prev = node;
+				stack->begin = node;
+			}
+			stack->size++;
 		}
 	}
 }
