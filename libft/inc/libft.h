@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 09:42:29 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/06 09:17:36 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/06 09:33:14 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,5 +132,6 @@ void	ft_clear_split(char **ptr);
 char	*get_next_line(int fd);
 long	ft_atol(const char *str);
 int		ft_split_size(const char **split);
+char	**ft_split_space(char const *str);
 
 #endif

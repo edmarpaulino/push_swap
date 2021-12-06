@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/07 16:04:57 by edpaulin          #+#    #+#              #
-#    Updated: 2021/12/06 09:18:20 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/12/06 09:33:29 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -69,7 +69,8 @@ SRC_FILES		=	ft_isalpha.c \
 					ft_clear_split.c \
 					get_next_line.c \
 					ft_atol.c \
-					ft_split_size.c
+					ft_split_size.c \
+					ft_split_space.c
 
 OBJ_DIR			=	./obj
 OBJ_FILES		=	$(addprefix $(OBJ_DIR)/,$(SRC_FILES:.c=.o))
