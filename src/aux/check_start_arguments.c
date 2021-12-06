@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:13:34 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/10 10:41:14 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/06 10:23:40 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static int	check_type(const int argc, const char **argv)
 	return (1);
 }
 
-static int	check_size(const int argc, const char **argv)
+static int	check_len(const int argc, const char **argv)
 {
 	int	arg_index;
 
@@ -84,7 +84,7 @@ static int	check_is_digit(const int argc, const char **argv)
 
 void	check_start_arguments(const int argc, const char **argv)
 {
-	if (!check_is_digit(argc, argv) || !check_size(argc, argv) \
+	if (!check_is_digit(argc, argv) || !check_len(argc, argv) \
 		|| !check_type(argc, argv) || !check_dup(argc, argv))
 	{
 		ft_putendl_fd("Error", 2);
