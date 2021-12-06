@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/07 09:42:29 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/24 14:40:04 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/06 09:17:36 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ void	ft_strlower(char *str);
 size_t	ft_strnlen(const char *str, size_t maxlen);
 size_t	ft_nbrlen(ssize_t nbr, int base);
 double	ft_atof(const char *str);
-int		ft_iswhitespace(int c);
+int		ft_isspace(int c);
 int		ft_signal(char c);
 int		ft_lastchr(const char *str);
 size_t	ft_word_counter(const char *str);

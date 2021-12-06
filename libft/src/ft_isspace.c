@@ -6,13 +6,13 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/08 19:49:52 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/10/08 20:00:06 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/06 09:17:21 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_iswhitespace(int c)
+int	ft_isspace(int c)
 {
 	return ((c >= 9 && c <= 13) || c == 32);
 }

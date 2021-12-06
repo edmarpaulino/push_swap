@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/07 16:04:57 by edpaulin          #+#    #+#              #
-#    Updated: 2021/11/24 14:40:19 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/12/06 09:18:20 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -62,7 +62,7 @@ SRC_FILES		=	ft_isalpha.c \
 					ft_strnlen.c \
 					ft_nbrlen.c \
 					ft_atof.c \
-					ft_iswhitespace.c \
+					ft_isspace.c \
 					ft_signal.c \
 					ft_lastchr.c \
 					ft_word_counter.c \
