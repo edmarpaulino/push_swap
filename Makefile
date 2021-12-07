@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/12/06 11:58:33 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/12/07 15:53:14 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,7 +41,10 @@ STK_FILES		=	stack_create.c \
 STK_PATH		=	$(addprefix $(STK_DIR)/, $(STK_FILES))
 
 SORT_DIR		=	sort
-SORT_FILES		=	sort_stack_size_two.c \
+SORT_FILES		=	unique_operations.c \
+					double_operations.c \
+					push_swap.c \
+					sort_stack_size_two.c \
 					sort_stack_size_three.c \
 					sort_stack_size_four.c \
 					sort_stack_size_two_reverse.c \
@@ -58,9 +61,6 @@ SORT_PATH		=	$(addprefix $(SORT_DIR)/, $(SORT_FILES))
 
 SRC_DIR			=	./src
 SRC_FILES		=	main.c \
-					unique_operations.c \
-					double_operations.c \
-					push_swap.c \
 					$(AUX_PATH) \
 					$(SORT_PATH) \
 					$(STK_PATH)

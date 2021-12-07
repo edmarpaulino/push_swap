@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/07 15:41:57 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/07 15:52:34 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,12 @@ typedef struct s_sort
 }				t_sort;
 
 //		auxiliar
-// void	check_start_arguments(const int argc, const char **argv);
-// void	init(int argc, char **argv, t_data *data);
+void	has_at_least_one_digit(int argc, char **argv);
+void	clear_splits(char ***splits);
+char	***get_splits(int argc, char **argv);
+void	init(const char ***splits, t_data *data);
+void	check_start_arguments(const char ***splits);
+int		check_dup(t_stack *stack_ref);
 void	data_destroy(t_data *data_ref);
 int		find_smaller(t_stack *stack_ref);
 int		find_bigger(t_stack *stack_ref);
@@ -73,13 +77,5 @@ void	sort_three_at_top_a(t_data *data);
 void	sort_two_at_top_b(t_data *data);
 void	sort_three_at_top_b(t_data *data);
 void	sort_descending(t_data *data);
-
-//	test
-void	has_at_least_one_digit(int argc, char **argv);
-void	clear_splits(char ***splits);
-char	***get_splits(int argc, char **argv);
-void	init(const char ***splits, t_data *data);
-void	check_start_arguments(const char ***splits);
-int		check_dup(t_stack *stack_ref);
 
 #endif
