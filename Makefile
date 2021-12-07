@@ -6,12 +6,12 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/12/07 15:53:14 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/12/07 18:40:45 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	push_swap
-BONUS_NAME		=	
+BONUS_NAME		=	checker
 
 AUX_DIR			=	aux
 AUX_FILES		=	check_start_arguments.c \
@@ -65,8 +65,11 @@ SRC_FILES		=	main.c \
 					$(SORT_PATH) \
 					$(STK_PATH)
 
-BONUS_DIR		=	
-BONUS_FILES		=	
+BONUS_DIR		=	./src
+BONUS_FILES		=	main_bonus.c \
+					$(AUX_PATH) \
+					$(SORT_PATH) \
+					$(STK_PATH)
 
 OBJ_DIR			=	./obj
 OBJ_FILES		=	$(addprefix $(OBJ_DIR)/, $(SRC_FILES:.c=.o))
@@ -110,7 +113,7 @@ clean:
 	make clean -C $(LIBFT_DIR)
 
 fclean:				clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(BONUS_NAME)
 	make fclean -C $(LIBFT_DIR)
 
 re:					fclean all

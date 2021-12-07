@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/29 15:46:25 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/04 09:01:38 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/07 19:40:58 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,3 +103,4 @@ char	*get_next_line(int fd)
 	}
 	return (read_file(fd, &buffer));
 }
+
