@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:13:34 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/07 15:46:48 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/07 18:38:45 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,10 @@ int	check_dup(t_stack *stack_ref)
 	if (stack_ref)
 	{
 		node = stack_ref->top;
-		while (node->prev)
+		while (node)
 		{
 			jumper = node->prev;
-			while (jumper->prev)
+			while (jumper)
 			{
 				if (jumper->content == node->content)
 					return (0);
