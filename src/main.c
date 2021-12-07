@@ -6,34 +6,34 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:34:53 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/06 11:33:04 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/07 15:46:00 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h> // remove later
 
 int	main(int argc, char **argv)
 {
-	char	***group;
-	int		index;
-	int		index_split;
+	char	***splits;
+	t_data	*data;
 
 	if (argc > 1)
 	{
-		group = get_splits(argc, argv);
-		index = 0;
-		while (group[index])
+		has_at_least_one_digit(argc, argv);
+		splits = get_splits(argc, argv);
+		check_start_arguments((const char ***)splits);
+		data = malloc(sizeof(t_data));
+		init((const char ***)splits, data);
+		clear_splits(splits);
+		if (!check_dup(data->stack_a))
 		{
-			index_split = 0;
-			while (group[index][index_split])
-			{
-				printf("%d - %s\n", index_split, group[index][index_split]);
-				index_split++;
-			}
-			index++;
+			ft_putendl_fd("Error", 2);
+			data_destroy(data);
+			return (1);
 		}
-		clear_splits(group);
+		if (!stack_is_sorted_ascending(data->stack_a))
+			push_swap(data);
+		data_destroy(data);
 	}
 	return (0);
 }

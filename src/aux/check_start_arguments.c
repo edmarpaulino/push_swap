@@ -6,88 +6,99 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:13:34 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/06 10:23:40 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/07 15:46:48 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	check_dup(const int argc, const char **argv)
+int	check_dup(t_stack *stack_ref)
 {
-	int	arg_index;
-	int	jumper;
+	t_stack_node	*node;
+	t_stack_node	*jumper;
 
-	arg_index = 1;
-	while (arg_index < argc)
+	if (stack_ref)
 	{
-		jumper = arg_index + 1;
-		while (jumper < argc)
+		node = stack_ref->top;
+		while (node->prev)
 		{
-			if (!ft_strcmp(argv[arg_index], argv[jumper]))
-				return (0);
-			jumper++;
+			jumper = node->prev;
+			while (jumper->prev)
+			{
+				if (jumper->content == node->content)
+					return (0);
+				jumper = jumper->prev;
+			}
+			node = node->prev;
 		}
-		arg_index++;
 	}
 	return (1);
 }
 
-static int	check_type(const int argc, const char **argv)
+static int	check_type(const char **split)
 {
-	int	arg_index;
+	int	i;
 
-	arg_index = 1;
-	while (arg_index < argc)
+	i = 0;
+	while (split[i])
 	{
-		if (ft_atol(argv[arg_index]) > MAX_INT \
-			|| ft_atol(argv[arg_index]) < MIN_INT)
+		if (ft_atol(split[i]) > MAX_INT || ft_atol(split[i]) < MIN_INT)
 			return (0);
-		arg_index++;
+		i++;
 	}
 	return (1);
 }
 
-static int	check_len(const int argc, const char **argv)
+static int	check_len(const char **split)
 {
-	int	arg_index;
+	int	i;
 
-	arg_index = 1;
-	while (arg_index < argc)
+	i = 0;
+	while (split[i])
 	{
-		if (ft_strlen(argv[arg_index]) > 11)
+		if (ft_strlen(split[i]) > 11)
 			return (0);
-		arg_index++;
+		i++;
 	}
 	return (1);
 }
 
-static int	check_is_digit(const int argc, const char **argv)
+static int	check_is_digit(const char **split)
 {
-	int	arg_index;
-	int	str_index;
+	int	i;
+	int	j;
 
-	arg_index = 1;
-	while (arg_index < argc)
+	i = 0;
+	while (split[i])
 	{
-		str_index = 0;
-		while (argv[arg_index][str_index])
+		j = 0;
+		while (split[i][j])
 		{
-			if (!(str_index == 0 && argv[arg_index][str_index] == '-') \
-				&& !ft_isdigit(argv[arg_index][str_index]))
+			if (!(j == 0 && split[i][j] == '-') \
+				&& !ft_isdigit(split[i][j]))
 				return (0);
-			str_index++;
+			j++;
 		}
-		arg_index++;
+		i++;
 	}
 	return (1);
 }
 
-void	check_start_arguments(const int argc, const char **argv)
+void	check_start_arguments(const char ***splits)
 {
-	if (!check_is_digit(argc, argv) || !check_len(argc, argv) \
-		|| !check_type(argc, argv) || !check_dup(argc, argv))
+	int	i;
+
+	i = 0;
+	while (splits[i])
 	{
-		ft_putendl_fd("Error", 2);
-		exit(EXIT_FAILURE);
+		if (!check_is_digit(splits[i]) \
+			|| !check_len(splits[i]) \
+			|| !check_type(splits[i]))
+		{
+			ft_putendl_fd("Error", 2);
+			clear_splits((char ***)splits);
+			exit(EXIT_FAILURE);
+		}
+		i++;
 	}
 }
