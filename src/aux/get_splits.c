@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/06 11:09:59 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/06 11:23:13 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/07 17:16:29 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,23 @@
 char	***get_splits(int argc, char **argv)
 {
 	char	***splits;
-	int		index;
+	int		i;
 
 	splits = malloc(argc * sizeof(char **));
 	if (splits)
 	{
-		index = 0;
-		while ((index + 1) < argc)
+		i = 0;
+		while ((i + 1) < argc)
 		{
-			splits[index] = ft_split_space(argv[index + 1]);
-			if (!splits[index])
+			splits[i] = ft_split_space(argv[i + 1]);
+			if (!splits[i])
 			{
 				clear_splits(splits);
 				return (NULL);
 			}
-			index++;
+			i++;
 		}
-		splits[index] = NULL;
+		splits[i] = NULL;
 	}
 	return (splits);
 }
