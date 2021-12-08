@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/12/07 18:40:45 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/12/08 18:22:52 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,7 +43,7 @@ STK_PATH		=	$(addprefix $(STK_DIR)/, $(STK_FILES))
 SORT_DIR		=	sort
 SORT_FILES		=	unique_operations.c \
 					double_operations.c \
-					push_swap.c \
+					sort_parser.c \
 					sort_stack_size_two.c \
 					sort_stack_size_three.c \
 					sort_stack_size_four.c \
@@ -51,7 +51,6 @@ SORT_FILES		=	unique_operations.c \
 					sort_stack_size_five.c \
 					sort_stack_size_three_reverse.c \
 					sort_stack_size_six.c \
-					complex_sort.c \
 					stack_a_complex_sort.c \
 					stack_b_complex_sort.c \
 					sort_top_a.c \
@@ -60,15 +59,14 @@ SORT_FILES		=	unique_operations.c \
 SORT_PATH		=	$(addprefix $(SORT_DIR)/, $(SORT_FILES))
 
 SRC_DIR			=	./src
-SRC_FILES		=	main.c \
+SRC_FILES		=	push_swap.c \
 					$(AUX_PATH) \
 					$(SORT_PATH) \
 					$(STK_PATH)
 
 BONUS_DIR		=	./src
-BONUS_FILES		=	main_bonus.c \
+BONUS_FILES		=	checker.c \
 					$(AUX_PATH) \
-					$(SORT_PATH) \
 					$(STK_PATH)
 
 OBJ_DIR			=	./obj
@@ -95,6 +93,8 @@ RM				=	rm -rf
 
 all:				$(NAME)
 
+bonus:				$(BONUS_NAME)
+
 $(OBJ_DIR)/%.o:		$(SRC_DIR)/%.c
 	$(MKDIR)
 	$(CC) $(CFLAGS) $(INC) -c $< -o $@
@@ -102,8 +102,10 @@ $(OBJ_DIR)/%.o:		$(SRC_DIR)/%.c
 $(NAME):			$(OBJ_FILES) $(LIBFT_PATH)
 	$(CC) $(CFLAGS) $(INC) $(OBJ_FILES) $(LIBFT_PATH) -o $(NAME)
 
-bonus:				$(OBJ_BONUS_FILES) $(LIBFT_PATH)
+$(BONUS_NAME):		$(OBJ_BONUS_FILES) $(LIBFT_PATH)
 	$(CC) $(CFLAGS) $(INC) $(OBJ_BONUS_FILES) $(LIBFT_PATH) -o $(BONUS_NAME)
+	
+	
 
 $(LIBFT_PATH):
 	make all -C $(LIBFT_DIR)

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:34:53 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/07 15:46:00 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/08 18:22:35 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char **argv)
 			return (1);
 		}
 		if (!stack_is_sorted_ascending(data->stack_a))
-			push_swap(data);
+			sort_parser(data);
 		data_destroy(data);
 	}
 	return (0);

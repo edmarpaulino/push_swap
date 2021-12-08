@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 17:37:32 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/07 15:52:34 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/08 18:22:45 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,8 @@ void	double_swap(t_data *data);
 void	double_rotate(t_data *data);
 void	double_reverse_rotate(t_data *data);
 
-//		push_swap
-void	push_swap(t_data *data);
-
 //		sort
+void	sort_parser(t_data *data);
 void	sort_stack_size_two(t_stack *stack_ref);
 void	sort_stack_size_three(t_stack *stack_ref);
 void	sort_stack_size_four(t_data *data);
@@ -69,7 +67,6 @@ void	sort_stack_size_two_reverse(t_stack *stack_ref);
 void	sort_stack_size_five(t_data *data);
 void	sort_stack_size_three_reverse(t_stack *stack_ref);
 void	sort_stack_size_six(t_data *data);
-void	complex_sort(t_data *data);
 void	split_stack_a(t_data *data, int block_size, int have_rra);
 void	split_stack_b(t_data *data, int block_size, int have_rrb);
 void	sort_two_at_top_a(t_data *data);
