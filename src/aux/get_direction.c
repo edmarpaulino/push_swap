@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 15:31:04 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/24 15:39:55 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/08 20:06:59 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ int	get_direction(t_stack *stack_ref, int value)
 	t_stack_node	*node;
 	int				count;
 
+	count = 0;
 	if (stack_ref)
 	{
 		node = stack_ref->top;
-		count = 0;
 		while (node)
 		{
 			if (node->content == value)
