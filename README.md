@@ -102,15 +102,12 @@ or
 ./push_swap "1 5 2 4 3"
 ```
 
-You can use ruby to generate unsorted numbers in a range
-**Make sure you have ruby installed in your system**
-
+You can use ruby to generate unsorted numbers in a range **(Make sure you have ruby installed in your system)**\
 Range  from 0 to 100
 ```sh
 ./push_swap `ruby -e "puts (0..100).to_a.shuffle.join(' ')"`
 ```
-You can also use negative numbers
-
+You can also use negative numbers\
 Range  from -50 to 49
 ```sh
 ./push_swap `ruby -e "puts (-50..49).to_a.shuffle.join(' ')"`
@@ -132,6 +129,6 @@ You can also run the checker with only the numbers and next write the instructio
 When you finish the instructions you can stop the program read with `ctrl+d`
 
 ---
-To make this project more fun you can use two amazing repositories that I recommend, one for testing and the other to visualize what happens when you run the program:
-[push_swap_tester](https://github.com/laisarena/push_swap_tester)
+To make this project more fun you can use two amazing repositories that I recommend, one for testing and the other to visualize what happens when you run the program:\
+[push_swap_tester](https://github.com/laisarena/push_swap_tester)\
 [push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer)
