@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/29 15:46:25 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/08 15:44:41 by edpaulin         ###   ########.fr       */
+/*   Created: 2021/08/09 15:43:22 by edpaulin          #+#    #+#             */
+/*   Updated: 2021/12/24 10:57:25 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static ssize_t	check_line(char *static_buffer)
+static ssize_t	has_line(char *static_buffer)
 {
 	ssize_t	i;
 
@@ -27,7 +27,7 @@ static ssize_t	check_line(char *static_buffer)
 	return (-1);
 }
 
-static ssize_t	read_buffer(int fd, char **static_buffer)
+static ssize_t	get_buffer(int fd, char **static_buffer)
 {
 	char	*buffer;
 	char	*tmp;
@@ -48,7 +48,7 @@ static ssize_t	read_buffer(int fd, char **static_buffer)
 			*static_buffer = ft_strjoin(tmp, buffer);
 			free(tmp);
 		}
-		if (check_line(*static_buffer) > 0)
+		if (has_line(*static_buffer) > 0)
 			break ;
 		ret = read(fd, buffer, BUFFER_SIZE);
 	}
@@ -63,7 +63,7 @@ static void	get_line(char **static_buffer, char **line)
 
 	if (*static_buffer)
 	{
-		i = check_line(*static_buffer);
+		i = has_line(*static_buffer);
 		if (i >= 0)
 		{
 			tmp = *static_buffer;
@@ -87,20 +87,20 @@ static void	get_line(char **static_buffer, char **line)
 
 char	*get_next_line(int fd)
 {
-	static char	*static_buffer;
+	static char	*static_buffer[OPEN_MAX];
 	char		*line;
 	ssize_t		ret;
 
 	if (fd < 0 || BUFFER_SIZE < 1)
 		return (NULL);
-	ret = read_buffer(fd, &static_buffer);
+	ret = get_buffer(fd, &static_buffer[fd]);
 	line = NULL;
 	if (ret == -1)
 	{
-		if (static_buffer)
-			free(static_buffer);
+		if (static_buffer[fd])
+			free(static_buffer[fd]);
 	}
 	else
-		get_line(&static_buffer, &line);
+		get_line(&static_buffer[fd], &line);
 	return (line);
 }
