@@ -130,5 +130,5 @@ When you finish the instructions you can stop the program read with `ctrl+d`
 
 ---
 To make this project more fun you can use two amazing repositories that I recommend, one for testing and the other to visualize what happens when you run the program:\
-[push_swap_tester](https://github.com/laisarena/push_swap_tester)\
-[push_swap_visualizer](https://github.com/o-reo/push_swap_visualizer)
+1. https://github.com/laisarena/push_swap_tester
+2. https://github.com/o-reo/push_swap_visualizer
