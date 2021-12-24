@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/07 18:06:44 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/08 18:17:49 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/09 14:37:44 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,7 @@ int	main(int argc, char **argv)
 			return (1);
 		}
 		get_moves(data);
-		if (stack_is_sorted_ascending(data->stack_a))
+		if (stack_is_sorted_ascending(data->stack_a) && !data->stack_b->size)
 			ft_putendl_fd("OK", 1);
 		else
 			ft_putendl_fd("KO", 1);

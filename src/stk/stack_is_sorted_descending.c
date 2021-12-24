@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/23 12:02:59 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/11/23 12:05:04 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/09 14:38:07 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	stack_is_sorted_descending(t_stack *stack_ref)
 	t_stack			*stack;
 	t_stack_node	*node;
 
-	if (stack_ref)
+	if (stack_ref && stack_ref->size > 0)
 	{
 		stack = stack_ref;
 		node = stack->begin;

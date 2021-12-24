@@ -6,7 +6,7 @@
 /*   By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/24 16:02:41 by edpaulin          #+#    #+#             */
-/*   Updated: 2021/12/06 10:06:43 by edpaulin         ###   ########.fr       */
+/*   Updated: 2021/12/09 14:40:24 by edpaulin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	*get_array(t_stack *block_ref, int len)
 {
-	int				index;
+	int				i;
 	int				*array;
 	t_stack_node	*block_node;
 
@@ -22,12 +22,12 @@ static int	*get_array(t_stack *block_ref, int len)
 	if (array)
 	{
 		block_node = block_ref->top;
-		index = 0;
-		while (block_node && index < len)
+		i = 0;
+		while (block_node && i < len)
 		{
-			array[index] = block_node->content;
+			array[i] = block_node->content;
 			block_node = block_node->prev;
-			index++;
+			i++;
 		}
 	}
 	return (array);

@@ -6,7 +6,7 @@
 #    By: edpaulin <edpaulin@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/01 11:45:05 by edpaulin          #+#    #+#              #
-#    Updated: 2021/12/08 18:22:52 by edpaulin         ###   ########.fr        #
+#    Updated: 2021/12/09 14:42:45 by edpaulin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,11 +78,8 @@ LIBFT			=	libft.a
 LIBFT_INC		=	$(LIBFT_DIR)/inc
 LIBFT_PATH		=	$(addprefix $(LIBFT_DIR)/, $(LIBFT))
 
-#	REMOVE LATER
-ERROR_FLAGS		=	-g3 -std=c11 -ggdb3
-
 CC				=	gcc
-CFLAGS			=	-Wall -Wextra -Werror $(ERROR_FLAGS)
+CFLAGS			=	-Wall -Wextra -Werror
 INC				=	-I ./inc -I $(LIBFT_INC)
 
 MKDIR			=	mkdir -p $(@D)
